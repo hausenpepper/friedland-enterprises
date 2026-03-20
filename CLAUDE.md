@@ -2,53 +2,51 @@
 
 ## Quick Reference
 - **Site**: https://friedlandenterprises.com
-- **Stack**: Astro v5 + Tailwind v4 + Cloudflare Pages
+- **Stack**: Static HTML + Cloudflare Pages (Astro used for build tooling/sitemap)
 - **Deploy**: Push to `main` → Cloudflare auto-deploys in ~1 min
 
 ## Content Map
 
-All site content lives in clearly labeled sections. Edit these files for content changes:
+The site is a single self-contained HTML file with all styles and scripts inline:
 
-- **Homepage**: `src/pages/index.astro`
-  - Hero section — name, tagline, CTA
-  - About section — bio paragraphs
-  - Focus Areas section — 4 investment focus cards
-  - Contact section — email and CTA text
-- **Navigation links**: `src/components/Header.astro` (navLinks array at top)
-- **Footer**: `src/components/Footer.astro`
-- **SEO metadata**: `src/layouts/BaseLayout.astro` (title, description, OG tags)
-- **Colors & fonts**: `src/styles/global.css` (@theme block)
-- **Images**: Place in `src/assets/images/`, import in page files
+- **Homepage**: `public/index.html` — the entire site lives here
+  - **Nav**: lines 273-287 — navigation links (Sectors, Services, Approach, Portfolio, Contact)
+  - **Hero**: lines 289-298 — headline, subtitle, stats bar (25+ yrs, 4 Board Seats, 35+ Positions, US & LATAM)
+  - **Sectors**: lines 302-330 — 6 sector cards (E-Commerce, Building Materials, Supply Chain, Real Estate, LATAM, Activist Microcap)
+  - **Capabilities**: lines 334-356 — 5 service rows (Advisory, Board Governance, Direct Investment, Activist, Real Estate)
+  - **Investment Approach**: lines 358-372 — 2-column thesis section
+  - **Portfolio**: lines 374-436 — full portfolio grouped by: Operating Companies, Board Seats, Direct Investments, Fund LP Positions, Real Estate, Activist Microcap
+  - **Contact**: lines 440-463 — email (hello@friedlandenterprises.com), location, social links
+  - **Footer**: lines 465-468
+  - **SEO/Schema**: lines 26-130 — Organization, Person, and Portfolio JSON-LD
+  - **Styles**: lines 136-269 — all CSS in `<style>` block
+  - **Scripts**: lines 470-493 — nav toggle + scroll reveal
+
+- **Static assets**: `public/` directory (robots.txt, favicon.svg, _headers)
 
 ## Workflow: Making Changes
 
 After ANY content or code change, always:
-1. Edit the relevant file(s)
+1. Edit `public/index.html`
 2. Run `npm run build` to verify no errors
 3. Commit with a clear, descriptive message
 4. Run `git push origin main`
 5. Tell the user: "Changes pushed — site will be live in ~1 minute at friedlandenterprises.com"
 
-## Adding a New Page
-
-1. Create `src/pages/[name].astro`
-2. Import and wrap content in `BaseLayout`
-3. Import `Header` and `Footer` components
-4. Add a nav link in `src/components/Header.astro` (navLinks array)
-5. Build, commit, push
-
 ## Common Tasks
 
 | Task | Where to Edit |
 |------|--------------|
-| Update bio text | `src/pages/index.astro` — About section |
-| Change tagline | `src/pages/index.astro` — Hero section |
-| Edit focus areas | `src/pages/index.astro` — Focus Areas section |
-| Change contact email | `src/pages/index.astro` — Contact section |
-| Update nav links | `src/components/Header.astro` — navLinks array |
-| Change colors | `src/styles/global.css` — @theme block |
-| Update SEO description | `src/layouts/BaseLayout.astro` — description default |
-| Add an image | Place in `src/assets/images/`, import in the page |
+| Update hero headline/stats | `public/index.html` — Hero section (~line 289) |
+| Edit sector descriptions | `public/index.html` — Sectors section (~line 302) |
+| Update capabilities | `public/index.html` — Services section (~line 334) |
+| Add/remove portfolio item | `public/index.html` — Portfolio section (~line 374) |
+| Change contact email | `public/index.html` — Contact section (~line 443) |
+| Update social links | `public/index.html` — socials div (~line 445) |
+| Change colors | `public/index.html` — :root CSS variables (~line 137) |
+| Update SEO metadata | `public/index.html` — head meta tags (~line 6) |
+| Update JSON-LD schema | `public/index.html` — script blocks (~line 26) |
+| Change nav links | `public/index.html` — nav ul (~line 279) |
 
 ## Build & Dev Commands
 
