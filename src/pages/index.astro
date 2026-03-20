@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Schema from "../components/Schema.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Friedland Enterprises",
+  url: "https://friedlandenterprises.com",
+  founder: {
+    "@type": "Person",
+    name: "Christian Friedland",
+  },
+  description:
+    "Investments, advisory, and strategic partnerships.",
+};
+---
+
+<BaseLayout title="Friedland Enterprises — Christian Friedland">
+  <Schema data={schema} />
+  <Header />
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="min-h-screen flex items-center justify-center bg-brand-navy text-brand-white px-6">
+      <div class="max-w-3xl text-center animate-on-scroll">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          Christian Friedland
+        </h1>
+        <p class="text-xl md:text-2xl text-brand-silver font-light mb-8">
+          Investments &middot; Advisory &middot; Strategic Partnerships
+        </p>
+        <a
+          href="#about"
+          class="inline-block px-8 py-3 border border-brand-silver/30 rounded-full text-sm font-medium text-brand-silver hover:bg-brand-white/10 transition-colors"
+        >
+          Learn More
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="py-24 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 animate-on-scroll">
+          About
+        </h2>
+        <div class="space-y-6 text-lg leading-relaxed text-brand-steel animate-on-scroll stagger-1">
+          <p>
+            Christian Friedland is a principal at Friedland Enterprises, focused on
+            direct private equity, activist public equity, structured credit, and
+            LP fund positions.
+          </p>
+          <p>
+            With a hands-on approach to deal sourcing and portfolio management,
+            Christian partners with founders and operators to build lasting value
+            across a range of industries and asset classes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOCUS AREAS SECTION ==================== -->
+    <section id="focus" class="py-24 px-6 bg-brand-light">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-12 animate-on-scroll">
+          Focus Areas
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Focus Area 1 -->
+          <div class="bg-brand-white rounded-xl p-8 shadow-sm animate-on-scroll stagger-1">
+            <h3 class="text-xl font-semibold text-brand-navy mb-3">
+              Direct Private Equity
+            </h3>
+            <p class="text-brand-steel leading-relaxed">
+              Startup equity and growth-stage investments in companies with
+              strong fundamentals and clear paths to value creation.
+            </p>
+          </div>
+
+          <!-- Focus Area 2 -->
+          <div class="bg-brand-white rounded-xl p-8 shadow-sm animate-on-scroll stagger-2">
+            <h3 class="text-xl font-semibold text-brand-navy mb-3">
+              Activist Public Equity
+            </h3>
+            <p class="text-brand-steel leading-relaxed">
+              Strategic positions in public markets where active engagement
+              can unlock shareholder value.
+            </p>
+          </div>
+
+          <!-- Focus Area 3 -->
+          <div class="bg-brand-white rounded-xl p-8 shadow-sm animate-on-scroll stagger-3">
+            <h3 class="text-xl font-semibold text-brand-navy mb-3">
+              Structured Credit
+            </h3>
+            <p class="text-brand-steel leading-relaxed">
+              Notes, debt instruments, and structured credit opportunities
+              with attractive risk-adjusted returns.
+            </p>
+          </div>
+
+          <!-- Focus Area 4 -->
+          <div class="bg-brand-white rounded-xl p-8 shadow-sm animate-on-scroll stagger-4">
+            <h3 class="text-xl font-semibold text-brand-navy mb-3">
+              LP Fund Positions
+            </h3>
+            <p class="text-brand-steel leading-relaxed">
+              Limited partner positions in select funds aligned with our
+              investment thesis and return targets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="py-24 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 animate-on-scroll">
+          Get in Touch
+        </h2>
+        <p class="text-lg text-brand-steel mb-8 animate-on-scroll stagger-1">
+          Interested in discussing a deal or partnership opportunity?
+        </p>
+        <a
+          href="mailto:chris@friedlandenterprises.com"
+          class="inline-block px-8 py-3 bg-brand-accent text-brand-white rounded-full text-sm font-semibold hover:bg-brand-accent-dark transition-colors animate-on-scroll stagger-2"
+        >
+          chris@friedlandenterprises.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

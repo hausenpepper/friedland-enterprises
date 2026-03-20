@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-brand-navy: #1B2A4A;
+  --color-brand-slate: #2D3748;
+  --color-brand-steel: #4A5568;
+  --color-brand-silver: #A0AEC0;
+  --color-brand-light: #EDF2F7;
+  --color-brand-white: #FFFFFF;
+  --color-brand-accent: #3182CE;
+  --color-brand-accent-dark: #2B6CB0;
+  --color-brand-warm: #E2E8F0;
+
+  /* Fonts */
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* Scroll Animations */
+.animate-on-scroll,
+.animate-from-left,
+.animate-from-right,
+.animate-scale {
+  opacity: 0;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.animate-on-scroll {
+  transform: translateY(24px);
+}
+
+.animate-from-left {
+  transform: translateX(-24px);
+}
+
+.animate-from-right {
+  transform: translateX(24px);
+}
+
+.animate-scale {
+  transform: scale(0.95);
+}
+
+.animate-on-scroll.is-visible,
+.animate-from-left.is-visible,
+.animate-from-right.is-visible,
+.animate-scale.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger Delays */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
