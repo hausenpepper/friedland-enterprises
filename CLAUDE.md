@@ -10,17 +10,16 @@
 The site is a single self-contained HTML file with all styles and scripts inline:
 
 - **Homepage**: `public/index.html` — the entire site lives here
-  - **Nav**: lines 273-287 — navigation links (Sectors, Services, Approach, Portfolio, Contact)
-  - **Hero**: lines 289-298 — headline, subtitle, stats bar (25+ yrs, 4 Board Seats, 35+ Positions, US & LATAM)
-  - **Sectors**: lines 302-330 — 6 sector cards (E-Commerce, Building Materials, Supply Chain, Real Estate, LATAM, Activist Microcap)
-  - **Capabilities**: lines 334-356 — 5 service rows (Advisory, Board Governance, Direct Investment, Activist, Real Estate)
-  - **Investment Approach**: lines 358-372 — 2-column thesis section
-  - **Portfolio**: lines 374-436 — full portfolio grouped by: Operating Companies, Board Seats, Direct Investments, Fund LP Positions, Real Estate, Activist Microcap
-  - **Contact**: lines 440-463 — email (hello@friedlandenterprises.com), location, social links
-  - **Footer**: lines 465-468
-  - **SEO/Schema**: lines 26-130 — Organization, Person, and Portfolio JSON-LD
-  - **Styles**: lines 136-269 — all CSS in `<style>` block
-  - **Scripts**: lines 470-493 — nav toggle + scroll reveal
+  - **Nav**: lines 228-240 — navigation links (Sectors, Services, Approach, Contact)
+  - **Hero**: lines 242-250 — headline, subtitle, stats bar (25+ yrs, 4 Board Seats, US & LATAM)
+  - **Sectors**: lines 254-282 — 6 sector cards
+  - **Capabilities**: lines 286-308 — 5 service rows
+  - **Investment Approach**: lines 310-324 — 2-column thesis section
+  - **Contact**: lines 326-340 — email, location, social links
+  - **Footer**: lines 342-345
+  - **SEO/Schema**: lines 26-83 — Organization and Person JSON-LD
+  - **Styles**: lines 89-222 — all CSS in `<style>` block
+  - **Scripts**: lines 347-370 — nav toggle + scroll reveal
 
 - **Static assets**: `public/` directory (robots.txt, favicon.svg, _headers)
 
@@ -37,16 +36,15 @@ After ANY content or code change, always:
 
 | Task | Where to Edit |
 |------|--------------|
-| Update hero headline/stats | `public/index.html` — Hero section (~line 289) |
-| Edit sector descriptions | `public/index.html` — Sectors section (~line 302) |
-| Update capabilities | `public/index.html` — Services section (~line 334) |
-| Add/remove portfolio item | `public/index.html` — Portfolio section (~line 374) |
-| Change contact email | `public/index.html` — Contact section (~line 443) |
-| Update social links | `public/index.html` — socials div (~line 445) |
-| Change colors | `public/index.html` — :root CSS variables (~line 137) |
+| Update hero headline/stats | `public/index.html` — Hero section (~line 242) |
+| Edit sector descriptions | `public/index.html` — Sectors section (~line 254) |
+| Update capabilities | `public/index.html` — Services section (~line 286) |
+| Change contact email | `public/index.html` — Contact section (~line 326) |
+| Update social links | `public/index.html` — socials div (~line 330) |
+| Change colors | `public/index.html` — :root CSS variables (~line 90) |
 | Update SEO metadata | `public/index.html` — head meta tags (~line 6) |
 | Update JSON-LD schema | `public/index.html` — script blocks (~line 26) |
-| Change nav links | `public/index.html` — nav ul (~line 279) |
+| Change nav links | `public/index.html` — nav ul (~line 232) |
 
 ## Build & Dev Commands
 
