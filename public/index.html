@@ -96,6 +96,8 @@
             --rule: #d9d5ce;
             --rule-dark: #171614;
             --accent: #6b3a2a;
+            --gold: #A88B3A;       /* Friedland Enterprises logo gold */
+            --gold-gray: #9a9590;  /* "ENTERPRISES" label gray in logo */
             --green: #3d6b4f;
             --red: #8b3a3a;
             --display: 'DM Serif Text', Georgia, serif;
@@ -114,7 +116,9 @@
         /* NAV */
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250,250,248,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); }
         .nav-inner { max-width: var(--max); margin: 0 auto; padding: 1rem var(--pad); display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-family: var(--body); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+        .nav-brand { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo { height: 36px; width: auto; display: block; }
+        @media (max-width: 480px) { .nav-logo { height: 28px; } }
         .nav-links { display: flex; gap: 1.75rem; list-style: none; }
         .nav-links a { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); transition: color 0.2s; }
         .nav-links a:hover { color: var(--ink); }
@@ -211,7 +215,20 @@
 
 <nav>
     <div class="nav-inner">
-        <div class="nav-brand">Friedland Enterprises</div>
+        <a href="#" class="nav-brand" aria-label="Friedland Enterprises">
+            <svg class="nav-logo" viewBox="0 0 205 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <!-- Badge icon: 8-pointed star/seal shape -->
+                <polygon points="28,4 34.5,12.3 45,11 43.7,21.5 52,28 43.7,34.5 45,45 34.5,43.7 28,52 21.5,43.7 11,45 12.3,34.5 4,28 12.3,21.5 11,11 21.5,12.3" fill="#A88B3A"/>
+                <!-- F letterform in white -->
+                <rect x="17" y="16" width="7" height="26" fill="white"/>
+                <rect x="17" y="16" width="23" height="7" fill="white"/>
+                <rect x="17" y="28" width="16" height="6" fill="white"/>
+                <!-- FRIEDLAND wordmark -->
+                <text x="62" y="27" font-family="Archivo, sans-serif" font-size="16" font-weight="600" letter-spacing="3" fill="#A88B3A">FRIEDLAND</text>
+                <!-- ENTERPRISES label -->
+                <text x="63.5" y="42" font-family="Archivo, sans-serif" font-size="9" font-weight="400" letter-spacing="3.2" fill="#9a9590">ENTERPRISES</text>
+            </svg>
+        </a>
         <button class="nav-toggle" id="navToggle" aria-label="Menu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
