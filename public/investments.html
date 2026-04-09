@@ -125,6 +125,14 @@
         .download-btn:hover { opacity: 0.85; }
         .download-btn svg { width: 14px; height: 14px; }
 
+        /* LIVE PRICE */
+        .price-loading { color: var(--ink-3); font-size: 0.9rem; }
+        .price-change { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.04em; margin-left: 0.3rem; }
+        .price-change.up { color: var(--green); }
+        .price-change.down { color: var(--red); }
+        .market-state { display: block; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.2rem; }
+        .market-state.open { color: var(--green); }
+
         /* DISCLAIMER */
         .disclaimer { padding: 2.5rem 0 5rem; }
         .disclaimer p { font-size: 0.74rem; color: var(--ink-3); line-height: 1.75; max-width: 860px; }
@@ -207,8 +215,14 @@
 
         <div class="stats-row">
             <div class="stat">
-                <span class="stat-val">$11.33</span>
-                <span class="stat-label">Current Price</span>
+                <span class="stat-val" id="lvlu-price">
+                    <span class="price-loading">—</span>
+                </span>
+                <span class="stat-label">
+                    Current Price
+                    <span id="lvlu-change" class="price-change"></span>
+                </span>
+                <span id="lvlu-market-state" class="market-state"></span>
             </div>
             <div class="stat">
                 <span class="stat-val green">$30</span>
@@ -318,6 +332,62 @@
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Live stock price — fetches from /api/stock (Cloudflare Pages Function)
+    async function fetchPrice(symbol, priceEl, changeEl, stateEl) {
+        try {
+            const res = await fetch(`/api/stock?symbol=${symbol}`);
+            if (!res.ok) throw new Error('fetch failed');
+            const d = await res.json();
+            if (d.error || d.price == null) throw new Error(d.error || 'no price');
+
+            // Price
+            priceEl.innerHTML = `$${d.price.toFixed(2)}`;
+
+            // Change
+            if (d.change != null && d.changePct != null) {
+                const sign = d.change >= 0 ? '+' : '';
+                const cls  = d.change >= 0 ? 'up' : 'down';
+                changeEl.textContent = `${sign}${d.change.toFixed(2)} (${sign}${d.changePct.toFixed(2)}%)`;
+                changeEl.className = `price-change ${cls}`;
+            }
+
+            // Market state badge
+            const stateMap = { REGULAR: 'Market Open', PRE: 'Pre-Market', POST: 'After Hours', CLOSED: 'Market Closed' };
+            const stateLabel = stateMap[d.marketState] || d.marketState;
+            stateEl.textContent = stateLabel;
+            stateEl.className = `market-state${d.marketState === 'REGULAR' ? ' open' : ''}`;
+
+        } catch (e) {
+            priceEl.innerHTML = '<span class="price-loading">—</span>';
+            stateEl.textContent = 'Price unavailable';
+        }
+    }
+
+    fetchPrice(
+        'LVLU',
+        document.getElementById('lvlu-price'),
+        document.getElementById('lvlu-change'),
+        document.getElementById('lvlu-market-state')
+    );
+
+    // Refresh every 60 seconds while page is visible
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) fetchPrice(
+            'LVLU',
+            document.getElementById('lvlu-price'),
+            document.getElementById('lvlu-change'),
+            document.getElementById('lvlu-market-state')
+        );
+    });
+    setInterval(() => {
+        if (!document.hidden) fetchPrice(
+            'LVLU',
+            document.getElementById('lvlu-price'),
+            document.getElementById('lvlu-change'),
+            document.getElementById('lvlu-market-state')
+        );
+    }, 60000);
 </script>
 
 </body>
