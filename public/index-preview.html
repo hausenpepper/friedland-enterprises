@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friedland Enterprises — Principal Investment and Operating Firm</title>
+    <meta name="description" content="Friedland Enterprises is a principal investment and operating firm. We invest in microcap public companies, hold board seats in mid-market private operating companies, run our own commerce and supply chain platforms, and partner each year with a small number of outside operators.">
+    <meta name="author" content="Friedland Enterprises LLC">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://friedlandenterprises.com/">
+
+    <meta property="og:title" content="Friedland Enterprises — Principal Investment and Operating Firm">
+    <meta property="og:description" content="We invest, we sit on boards, we operate. Each year we partner with a small number of outside operators.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://friedlandenterprises.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Friedland Enterprises">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #fafaf8;
+            --bg-warm: #f2f0eb;
+            --ink: #171614;
+            --ink-2: #4a4640;
+            --ink-3: #8a857d;
+            --rule: #d9d5ce;
+            --rule-dark: #171614;
+            --accent: #6b3a2a;
+            --gold: #A88B3A;
+            --gold-gray: #9a9590;
+            --green: #3d6b4f;
+            --red: #8b3a3a;
+            --display: 'DM Serif Text', Georgia, serif;
+            --body: 'Archivo', system-ui, sans-serif;
+            --max: 1100px;
+            --pad: clamp(1.25rem, 5vw, 4rem);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { background: var(--bg); color: var(--ink); font-family: var(--body); font-weight: 300; font-size: 1rem; line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        ::selection { background: var(--ink); color: var(--bg); }
+        a { color: inherit; text-decoration: none; }
+        .w { max-width: var(--max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+        .divider { border: none; border-top: 1px solid var(--rule); max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+        /* PREVIEW BANNER */
+        .preview-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: #171614; color: #fafaf8; padding: 0.75rem var(--pad); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        .preview-banner a { color: var(--gold); border-bottom: 1px solid var(--gold); }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250,250,248,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); }
+        .nav-inner { max-width: var(--max); margin: 0 auto; padding: 1rem var(--pad); display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo { height: 40px; width: auto; display: block; }
+        @media (max-width: 480px) { .nav-logo { height: 32px; } }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--ink); padding: 0.5rem; }
+        .nav-toggle svg { display: block; width: 22px; height: 22px; }
+
+        .tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.5rem; }
+
+        /* HERO */
+        .hero { padding: clamp(7rem, 16vh, 13rem) 0 4.5rem; }
+        .hero h1 { font-family: var(--display); font-size: clamp(2rem, 4.8vw, 3.6rem); font-weight: 400; line-height: 1.18; letter-spacing: -0.01em; max-width: 880px; margin-bottom: 2rem; }
+        .hero-sub { font-size: clamp(0.95rem, 1.6vw, 1.05rem); color: var(--ink-2); max-width: 680px; line-height: 1.85; }
+        .hero-meta { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--rule-dark); display: flex; gap: clamp(2rem, 4vw, 3.5rem); flex-wrap: wrap; }
+        .meta-item { font-size: 0.78rem; color: var(--ink-2); letter-spacing: 0.04em; }
+        .meta-item strong { display: block; font-family: var(--display); font-size: 0.95rem; color: var(--ink); font-weight: 400; margin-bottom: 0.15rem; }
+
+        /* WHO WE ARE */
+        .who { padding: 5rem 0; }
+        .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+        .who h2 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; line-height: 1.25; margin-bottom: 1.5rem; }
+        .who p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.85; margin-bottom: 1.25rem; }
+        .who-side { background: var(--bg-warm); padding: 2rem 2.25rem; border-left: 2px solid var(--gold); }
+        .who-side h4 { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.9rem; }
+        .who-side ul { list-style: none; padding: 0; }
+        .who-side li { font-size: 0.84rem; color: var(--ink-2); padding: 0.5rem 0; border-bottom: 1px solid var(--rule); line-height: 1.55; }
+        .who-side li:last-child { border-bottom: none; }
+        .who-side li strong { color: var(--ink); font-weight: 500; }
+
+        /* PILLAR (What We Do) */
+        .pillars { padding: 4.5rem 0 2rem; }
+        .pillar { padding: 3rem 0 3.5rem; border-top: 1px solid var(--rule-dark); }
+        .pillar + .pillar { border-top: 1px solid var(--rule); }
+        .pillar-head { display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; margin-bottom: 2rem; align-items: baseline; }
+        .pillar-num { font-family: var(--display); font-size: 0.82rem; color: var(--ink-3); letter-spacing: 0.1em; }
+        .pillar h2 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; line-height: 1.2; }
+        .pillar-intro { font-size: 0.95rem; color: var(--ink-2); line-height: 1.85; max-width: 720px; margin-bottom: 2rem; padding-left: 0; }
+        .pillar-grid { display: grid; gap: 2rem; }
+        .pillar-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .pillar-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .sub { padding: 0; }
+        .sub h3 { font-family: var(--display); font-size: 1.08rem; font-weight: 400; margin-bottom: 0.6rem; }
+        .sub p { font-size: 0.86rem; color: var(--ink-2); line-height: 1.75; }
+        .sub p + p { margin-top: 0.75rem; }
+        .sub .tickers { margin-top: 0.9rem; font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.04em; }
+        .sub .tickers strong { color: var(--ink); letter-spacing: 0.06em; font-weight: 500; }
+        .sub .anchor { display: inline-block; margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 0.1rem; transition: opacity 0.2s; }
+        .sub .anchor:hover { opacity: 0.6; }
+
+        /* METHOD (OAP) */
+        .method { padding: 5rem 0; background: var(--bg-warm); }
+        .method-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+        .method h2 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.25rem; }
+        .method-intro { font-size: 0.95rem; color: var(--ink-2); line-height: 1.85; max-width: 640px; margin-bottom: 3rem; }
+        .method-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+        .method-step { padding-top: 1.25rem; border-top: 1px solid var(--rule-dark); }
+        .method-step .step-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+        .method-step h3 { font-family: var(--display); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.75rem; }
+        .method-step p { font-size: 0.86rem; color: var(--ink-2); line-height: 1.75; }
+        .method-footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.86rem; color: var(--ink-2); line-height: 1.75; max-width: 640px; }
+
+        /* RECORD */
+        .record { padding: 5rem 0; }
+        .record h2 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.5rem; }
+        .record p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.85; max-width: 720px; margin-bottom: 1.5rem; }
+        .record-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 3.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+        .record-item h4 { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.6rem; }
+        .record-item p { font-size: 0.86rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 0; }
+
+        /* CONTACT */
+        .contact { padding: 5rem 0 7rem; }
+        .contact h2 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1rem; }
+        .contact-sub { font-size: 0.92rem; color: var(--ink-2); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.75; }
+        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; max-width: 680px; }
+        .contact-form .full { grid-column: 1 / -1; }
+        .contact-form label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: 0.35rem; }
+        .contact-form input, .contact-form textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--rule-dark); padding: 0.6rem 0; font-family: var(--body); font-size: 0.92rem; color: var(--ink); font-weight: 300; outline: none; transition: border-color 0.2s; }
+        .contact-form textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+        .contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--gold); }
+        .contact-form button { justify-self: start; margin-top: 0.5rem; background: var(--ink); color: var(--bg); border: none; padding: 0.85rem 1.6rem; font-family: var(--body); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; }
+        .contact-form button:hover { opacity: 0.85; }
+        .contact-meta { margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); font-size: 0.82rem; color: var(--ink-3); display: flex; gap: 2rem; flex-wrap: wrap; }
+        .contact-meta a { border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
+        .contact-meta a:hover { border-bottom-color: var(--ink); }
+
+        /* FOOTER */
+        footer { border-top: 1px solid var(--rule); padding: 2rem var(--pad); display: flex; justify-content: space-between; align-items: center; max-width: var(--max); margin: 0 auto; font-size: 0.72rem; color: var(--ink-3); }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            .nav-links { display: none; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); padding: 5rem var(--pad) 2rem; gap: 1.5rem; z-index: 99; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; z-index: 100; }
+            .nav-links a { font-size: 1rem; letter-spacing: 0.05em; }
+
+            .hero { padding: 6.5rem 0 3.5rem; }
+            .hero h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+
+            .who-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .pillar-head { grid-template-columns: 1fr; gap: 0.5rem; }
+            .pillar-grid.cols-3, .pillar-grid.cols-2 { grid-template-columns: 1fr; }
+            .method-steps { grid-template-columns: 1fr; gap: 2rem; }
+            .record-list { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-form { grid-template-columns: 1fr; }
+
+            footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .preview-banner { font-size: 0.62rem; flex-direction: column; gap: 0.25rem; padding: 0.5rem var(--pad); }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-brand" aria-label="Friedland Enterprises">
+            <img src="/images/logo.png" alt="Friedland Enterprises" class="nav-logo">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#investments">Investments</a></li>
+            <li><a href="#operating">Operating</a></li>
+            <li><a href="#partnerships">Partnerships</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="/investments">Public Equity</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero w reveal">
+    <h1>Operators and allocators. We build, run, and back companies, and bring the same operating systems to a small number of partners each year.</h1>
+    <p class="hero-sub">Friedland Enterprises is a principal investment and operating firm. We invest in microcap public companies through concentrated activist positions, hold board seats in mid-market private operating companies across building products, hardware, hydroponics, and surfaces, run our own platforms in B2B commerce and supply chain, and partner each year with a small number of outside operators to deploy the AI and operating systems we have built in our own businesses.</p>
+    <div class="hero-meta">
+        <div class="meta-item"><strong>Activist public equity</strong>CMRC, TRVG, LVLU, GRWG</div>
+        <div class="meta-item"><strong>Private boards</strong>Building products, hardware, hydroponics, surfaces</div>
+        <div class="meta-item"><strong>Operating</strong>ZenSupply. Build.com sold to Ferguson.</div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHO WE ARE -->
+<section id="about" class="who w reveal">
+    <div class="tag">Who We Are</div>
+    <div class="who-grid">
+        <div>
+            <h2>A small principal team that invests, sits on boards, and runs operating businesses.</h2>
+            <p>Friedland Enterprises was founded by Christian Friedland, who built and sold Build.com (acquired by Ferguson). Today Christian is CEO of ZenSupply, a board member at multiple mid-market operating companies in building products, hardware, hydroponics, and surfaces, and an activist public-equity investor focused on KPI disclosure and operational accountability in microcap companies.</p>
+            <p>The firm operates as a small principal team. We invest, we sit on boards, we run our own operating businesses, and we selectively bring our playbook to a small number of outside operators each year.</p>
+        </div>
+        <aside class="who-side">
+            <h4>Principal &amp; Team</h4>
+            <ul>
+                <li><strong>Christian B. Friedland</strong> Managing Principal. Founder Build.com. CEO ZenSupply.</li>
+                <li><strong>Ryan O'Donnell</strong> Trading and execution. Partner FBE Real Estate.</li>
+                <li><strong>Julia Rodrigues</strong> Chief of Staff. Firm operations and activist support.</li>
+            </ul>
+        </aside>
+    </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="pillars w">
+
+    <!-- PILLAR 1: INVESTMENTS -->
+    <div id="investments" class="pillar reveal">
+        <div class="pillar-head">
+            <div>
+                <div class="pillar-num">01 &nbsp;What We Do</div>
+            </div>
+            <h2>Investments</h2>
+        </div>
+        <p class="pillar-intro">Investments are the firm's identity and the underwriting credential for everything else. Three programs run in parallel: concentrated activist positions in microcap public equity, board investments in private mid-market operating companies, and a California real estate partnership.</p>
+        <div class="pillar-grid cols-3">
+            <div class="sub">
+                <h3>Activist public-equity engagement</h3>
+                <p>We hold concentrated positions in select microcap public companies where disclosure, operating focus, or capital allocation can be materially improved. Our framework, internally called Type B, screens for microcap companies with positive gross profit and what we describe as opacity discounts: businesses the market underprices because management has not made the operating story legible.</p>
+                <p>Our engagement is constructive and KPI-driven. We publish operating theses, build public scoreboards against the metrics that matter, and hold positions long enough for the work to matter.</p>
+                <div class="tickers"><strong>Current and prior engagements:</strong> CMRC, TRVG, LVLU, GRWG</div>
+                <a href="/investments" class="anchor">Published theses</a>
+            </div>
+            <div class="sub">
+                <h3>Private-company board investments</h3>
+                <p>We hold board seats and operating-investor positions in private mid-market companies across building products, hardware and security, hydroponics and specialty distribution, and surfaces and flooring.</p>
+                <p>Our involvement on each board is hands-on. We work alongside management on operating priorities, capital structure, talent decisions, and the systems and technology required to run a modern $50M to $500M business.</p>
+                <div class="tickers"><strong>Boards:</strong> Hydrobuilder, Eurofase, Hampton Products, Madeira</div>
+            </div>
+            <div class="sub">
+                <h3>Real estate</h3>
+                <p>FBE (Folsom Elvas) is a California real estate partnership with Ryan O'Donnell and Lori Bluett, focused on selective residential and small commercial acquisitions in target submarkets.</p>
+                <p>Underwritten at the asset level. Held for cash flow and selective repositioning. No third-party capital, no fund vehicle.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PILLAR 2: OPERATING COMPANIES -->
+    <div id="operating" class="pillar reveal">
+        <div class="pillar-head">
+            <div>
+                <div class="pillar-num">02 &nbsp;What We Do</div>
+            </div>
+            <h2>Operating companies</h2>
+        </div>
+        <div class="pillar-grid cols-2">
+            <div class="sub">
+                <h3>ZenSupply</h3>
+                <p>ZenSupply is our principal operating platform in B2B commerce and supply chain, co-founded and led by Christian Friedland. The systems we deploy in our partnership engagements are first built and proven inside ZenSupply.</p>
+            </div>
+            <div class="sub">
+                <h3>Build.com era</h3>
+                <p>Prior to ZenSupply, Christian founded and led Build.com, scaling it to a nine-figure e-commerce business before its acquisition by Ferguson. The operating playbook the firm runs on today traces directly to that period.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PILLAR 3: BOARD GOVERNANCE / PE ADVISORY -->
+    <div id="governance" class="pillar reveal">
+        <div class="pillar-head">
+            <div>
+                <div class="pillar-num">03 &nbsp;What We Do</div>
+            </div>
+            <h2>Board governance and PE advisory</h2>
+        </div>
+        <p class="pillar-intro">Beyond our own portfolio, we advise selected private equity firms and management teams on operating questions where direct operator experience matters more than process. Engagements are limited and relationship-based, anchored in the Lead Edge Capital orbit and select other PE relationships.</p>
+    </div>
+
+    <!-- PILLAR 4: SELECTIVE OPERATING PARTNERSHIPS (AI offer, intentionally last) -->
+    <div id="partnerships" class="pillar reveal">
+        <div class="pillar-head">
+            <div>
+                <div class="pillar-num">04 &nbsp;What We Do</div>
+            </div>
+            <h2>Selective operating partnerships</h2>
+        </div>
+        <p class="pillar-intro">The systems we deploy in our own operating companies, and the operating questions we work on inside our private boards, are increasingly built on AI. Each year we partner with two or three outside operating companies to deploy that same playbook. We do not run a consulting practice in the traditional sense. We accept partnerships only where we understand the industry, where the operator is committed to moving, and where we can ship a working system inside a defined window.</p>
+        <div class="pillar-grid cols-3">
+            <div class="sub">
+                <h3>AI in operations</h3>
+                <p>Workflow automation in operations, customer service, and procurement. Configured for the operator's actual stack and decision points, not a reference architecture.</p>
+            </div>
+            <div class="sub">
+                <h3>Finance ops automation</h3>
+                <p>Automation across AP, AR, cash forecasting, and management reporting. Systems your finance team operates, not a dashboard that depends on us.</p>
+            </div>
+            <div class="sub">
+                <h3>Commerce and supply chain AI</h3>
+                <p>Repricing, catalog management, merchandising, and inventory intelligence. The category we have spent two decades operating in.</p>
+            </div>
+        </div>
+        <p class="pillar-intro" style="margin-top: 2rem; max-width: 720px; font-style: italic; color: var(--ink-3);">Engagements run eight to sixteen weeks and end with a working system the operator's team owns.</p>
+    </div>
+
+</section>
+
+<!-- METHOD (OAP) -->
+<section id="method" class="method reveal">
+    <div class="method-inner">
+        <div class="tag">How We Work</div>
+        <h2>Observe. Analyze. Activate.</h2>
+        <p class="method-intro">We do not start with recommendations. We start by understanding how the business actually runs.</p>
+        <div class="method-steps">
+            <div class="method-step">
+                <div class="step-label">01 &nbsp;Observe</div>
+                <h3>Observe</h3>
+                <p>We map operations: people, workflows, tools, decision points. We identify where human time is being spent on work that a well-configured AI system could handle without losing judgment quality.</p>
+            </div>
+            <div class="method-step">
+                <div class="step-label">02 &nbsp;Analyze</div>
+                <h3>Analyze</h3>
+                <p>We build a crawl-walk-run roadmap. What gets implemented first (highest ROI, lowest disruption), what comes next, what to skip. Every recommendation carries a cost estimate and a success metric.</p>
+            </div>
+            <div class="method-step">
+                <div class="step-label">03 &nbsp;Activate</div>
+                <h3>Activate</h3>
+                <p>We deploy. Tool selection, configuration, integration with your stack, training your team, and staying involved until the system is stable. We bring in specialists from our operating network where needed.</p>
+            </div>
+        </div>
+        <p class="method-footer">Most engagements run eight to sixteen weeks. The deliverable is a working system, not a slide deck.</p>
+    </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section id="record" class="record w reveal">
+    <div class="tag">Track Record</div>
+    <h2>Operationally and capital-markets-tested.</h2>
+    <p>We have built, scaled, sold, and currently operate companies across B2B commerce and supply chain. We sit on boards across building products, hardware, hydroponics, and surfaces. We have run public activist engagements at CMRC, TRVG, LVLU, and GRWG, building public KPI scoreboards and engaging management on disclosure and operating focus. The systems we deploy in partner engagements are the same ones we run in our own businesses.</p>
+    <div class="record-list">
+        <div class="record-item">
+            <h4>Operating</h4>
+            <p>Build.com (founded and led; acquired by Ferguson). ZenSupply (co-founder, CEO). Two decades of B2B commerce and supply chain operating experience.</p>
+        </div>
+        <div class="record-item">
+            <h4>Private Boards</h4>
+            <p>Active board roles in building products, hardware and security, hydroponics, and surfaces. Hands-on engagement on capital structure, operating priorities, and technology.</p>
+        </div>
+        <div class="record-item">
+            <h4>Activist Engagements</h4>
+            <p>Public KPI scoreboards and disclosure-focused engagements at CMRC, TRVG, LVLU, and GRWG. Published theses available on the public equity page.</p>
+        </div>
+        <div class="record-item">
+            <h4>Operating Partnerships</h4>
+            <p>Anonymized partnership outcomes available on request. Each engagement ends with a working system the operator's team owns.</p>
+        </div>
+    </div>
+    <p style="margin-top: 2.5rem; font-size: 0.82rem; color: var(--ink-3); max-width: 720px;">Published activist theses and selected references available on request.</p>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact" class="contact w reveal">
+    <div class="tag">Contact</div>
+    <h2>Get in touch.</h2>
+    <p class="contact-sub">For board opportunities, co-investment, or operating partnership inquiries.</p>
+    <form class="contact-form" action="mailto:hello@friedlandenterprises.com" method="post" enctype="text/plain">
+        <div>
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="Name" required>
+        </div>
+        <div>
+            <label for="cf-company">Company</label>
+            <input type="text" id="cf-company" name="Company" required>
+        </div>
+        <div class="full">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="Subject" required>
+        </div>
+        <div class="full">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="Message" required></textarea>
+        </div>
+        <button type="submit" class="full" style="justify-self: start;">Send</button>
+    </form>
+    <div class="contact-meta">
+        <a href="mailto:hello@friedlandenterprises.com">hello@friedlandenterprises.com</a>
+        <span>Miami Beach, Florida</span>
+        <a href="https://www.linkedin.com/in/chrisfriedland" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+</section>
+
+<footer>
+    <span>&copy; 2026 Friedland Enterprises LLC</span>
+    <span>Christian B. Friedland, Managing Principal</span>
+</footer>
+
+<!-- PREVIEW BANNER -->
+<div class="preview-banner">
+    <span>Preview: Principal-First Redraft (not indexed)</span>
+    <span><a href="/">View live site</a></span>
+</div>
+
+<script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+        links.classList.toggle('open');
+        const isOpen = links.classList.contains('open');
+        toggle.innerHTML = isOpen
+            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+            : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+    });
+    links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        });
+    });
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
