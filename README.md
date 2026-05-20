@@ -41,6 +41,7 @@ Cloudflare Pages picks up the push and the site is live in about a minute. No de
 | `public/images/` | Logo and brand assets. |
 | `public/_headers` | Cloudflare HTTP headers config. |
 | `public/robots.txt`, `favicon.*` | Standard static assets. |
+| `public/scripts/tracking.js` | Single source for all site tracking (Pipedrive Web Visitors / Leadfeeder). Included via `<script src="/scripts/tracking.js" async>` from each HTML page. |
 | `functions/api/stock.js` | Cloudflare Pages Function. Powers the live stock price on `/investments`. |
 | `wrangler.jsonc` | Cloudflare Pages config. |
 | `astro.config.mjs`, `src/`, `package.json` | Astro tooling. The actual pages live in `public/`, Astro just builds. |
@@ -59,6 +60,7 @@ All three public HTML pages (`index.html`, `investments.html`, `careers.html`) a
 | Update stock symbol or add a new ticker | `public/investments.html` (find the `fetchPrice` JS at the bottom) |
 | Change colors/typography | CSS variables at the top of each HTML file's `<style>` block |
 | Update social links / contact email | `public/index.html`, bottom contact section |
+| Add or replace a tracking script | `public/scripts/tracking.js` (do NOT inline snippets into individual pages) |
 
 ---
 
