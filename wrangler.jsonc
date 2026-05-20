@@ -1,5 +1,6 @@
 {
   "name": "friedland-enterprises",
+  "account_id": "6b52d8e28d0a303bf3454bb5e775645d",
   "compatibility_date": "2025-12-30",
   "assets": {
     "directory": "./dist"
