@@ -3,49 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers — Friedland Enterprises</title>
-    <meta name="description" content="Executive Assistant / Chief of Staff — Miami Beach, FL. Part-time to full-time, 1099 contractor, remote-friendly. Join Friedland Enterprises.">
+    <title>The People. Friedland Enterprises</title>
+    <meta name="description" content="The principal, integrator, chief of staff, and senior operators we engage by name. Every person has built, scaled, or led operating businesses in the sectors we serve.">
     <meta name="author" content="Friedland Enterprises LLC">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://friedlandenterprises.com/careers">
 
-    <meta property="og:title" content="Executive Assistant / Chief of Staff — Friedland Enterprises">
-    <meta property="og:description" content="Miami Beach, FL. Part-time to full-time, 1099 contractor, remote-friendly. This is not a conventional EA role.">
+    <meta property="og:title" content="The People. Friedland Enterprises">
+    <meta property="og:description" content="The principal, integrator, chief of staff, and senior operators we engage by name.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://friedlandenterprises.com/careers">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Friedland Enterprises">
-
-    <!-- JSON-LD: Job Posting -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "JobPosting",
-        "title": "Executive Assistant / Chief of Staff",
-        "description": "EA/COS role supporting a principal who runs a profitable e-commerce startup, holds board seats across the U.S. and internationally, and manages an active investment portfolio. AI-augmented operations. Remote-friendly with Miami Beach presence required.",
-        "hiringOrganization": {
-            "@type": "Organization",
-            "name": "Friedland Enterprises LLC",
-            "url": "https://friedlandenterprises.com"
-        },
-        "jobLocation": {
-            "@type": "Place",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Miami Beach",
-                "addressRegion": "FL",
-                "addressCountry": "US"
-            }
-        },
-        "employmentType": "CONTRACTOR",
-        "workHours": "Part-time to full-time, 20–25 hours/week to start",
-        "datePosted": "2026-03-30",
-        "applicationContact": {
-            "@type": "ContactPoint",
-            "email": "chris@chrisfriedland.com"
-        }
-    }
-    </script>
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -69,10 +38,6 @@
             --rule: #d9d5ce;
             --rule-dark: #171614;
             --accent: #6b3a2a;
-            --gold: #A88B3A;
-            --gold-gray: #9a9590;
-            --green: #3d6b4f;
-            --red: #8b3a3a;
             --display: 'DM Serif Text', Georgia, serif;
             --body: 'Archivo', system-ui, sans-serif;
             --max: 1100px;
@@ -101,36 +66,57 @@
         .tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.5rem; }
 
         /* PAGE HEADER */
-        .page-header { padding: clamp(7rem, 14vh, 12rem) 0 3.5rem; }
+        .page-header { padding: clamp(7rem, 14vh, 12rem) 0 3rem; }
         .page-header .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 2.5rem; transition: color 0.2s; }
         .page-header .back-link:hover { color: var(--ink); }
         .page-header .back-link svg { width: 14px; height: 14px; }
-        .page-header h1 { font-family: var(--display); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1rem; }
-        .job-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1rem; }
-        .job-meta span { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 0.35rem; }
-        .job-meta span::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--rule-dark); }
+        .page-header h1 { font-family: var(--display); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.25rem; max-width: 780px; }
+        .page-header .lede { font-size: clamp(0.95rem, 2vw, 1.05rem); color: var(--ink-2); max-width: 640px; line-height: 1.85; }
 
-        /* JOB CONTENT */
-        .job-body { padding-bottom: 6rem; }
-        .job-section { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; padding: 2.5rem 0; border-top: 1px solid var(--rule); }
-        .job-section:first-of-type { border-top: 1px solid var(--rule-dark); }
-        .job-section h2 { font-family: var(--display); font-size: 1.08rem; font-weight: 400; padding-top: 0.1rem; color: var(--ink); }
-        .job-section-content p { font-size: 0.9rem; color: var(--ink-2); line-height: 1.85; max-width: 620px; }
-        .job-section-content p + p { margin-top: 1rem; }
+        /* SECTION HEADERS */
+        .section-h2 { font-family: var(--display); font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+        .section-intro { padding: 4.5rem 0 1.5rem; }
+        .section-intro .sub { font-size: 0.92rem; color: var(--ink-3); max-width: 560px; line-height: 1.75; }
 
-        /* APPLY BLOCK */
-        .apply-block { background: var(--bg-warm); border-top: 1px solid var(--rule-dark); padding: 3.5rem 0 4rem; }
-        .apply-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-        .apply-inner h2 { font-family: var(--display); font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 400; margin-bottom: 1rem; }
-        .apply-inner p { font-size: 0.9rem; color: var(--ink-2); max-width: 540px; line-height: 1.85; margin-bottom: 0.75rem; }
-        .apply-instructions { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.6rem; }
-        .apply-instructions li { font-size: 0.86rem; color: var(--ink-2); list-style: none; padding-left: 1.2rem; position: relative; }
-        .apply-instructions li::before { content: '—'; position: absolute; left: 0; color: var(--ink-3); }
-        .apply-cta { margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; }
-        .apply-email { font-family: var(--display); font-size: clamp(1rem, 2vw, 1.4rem); color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 0.15rem; transition: border-color 0.2s; }
-        .apply-email:hover { border-bottom-color: var(--ink); }
-        .subject-line { margin-top: 1rem; font-size: 0.78rem; color: var(--ink-3); }
-        .subject-line code { font-family: var(--body); font-weight: 400; color: var(--ink-2); background: var(--bg); padding: 0.15rem 0.4rem; border-radius: 3px; border: 1px solid var(--rule); }
+        /* PRINCIPAL & CORE */
+        .person { display: grid; grid-template-columns: 240px 1fr; gap: 3rem; padding: 3rem 0; border-top: 1px solid var(--rule); }
+        .person:first-child { border-top: 1px solid var(--rule-dark); }
+        .person .photo { width: 240px; height: 300px; background: var(--bg-warm); border: 1px solid var(--rule); position: relative; overflow: hidden; }
+        .person .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .person .photo .placeholder { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: var(--body); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); text-align: center; padding: 1rem; }
+        .person .photo.no-image .placeholder { display: flex; }
+        .person h2 { font-family: var(--display); font-size: clamp(1.5rem, 2.6vw, 1.95rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.35rem; }
+        .person .role { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.5rem; }
+        .person .bio p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.85; max-width: 620px; }
+        .person .bio p + p { margin-top: 1rem; }
+
+        /* BENCH */
+        .bench-wrap { background: var(--bg-warm); border-top: 1px solid var(--rule-dark); padding: 4.5rem 0 5rem; margin-top: 4.5rem; }
+        .bench-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+        .bench-intro { margin-bottom: 3rem; }
+        .bench-list { display: flex; flex-direction: column; }
+        .bench-row { display: grid; grid-template-columns: 80px 220px 1fr; gap: 2rem; align-items: start; padding: 2rem 0; border-top: 1px solid var(--rule); }
+        .bench-row:first-child { border-top: 1px solid var(--rule-dark); }
+        .bench-photo { width: 80px; height: 80px; border-radius: 50%; background: var(--bg); border: 1px solid var(--rule); position: relative; overflow: hidden; }
+        .bench-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .bench-photo .initials { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: var(--display); font-size: 1.15rem; color: var(--ink-3); }
+        .bench-photo.no-image .initials { display: flex; }
+        .bench-id .name { font-family: var(--display); font-size: 1.18rem; font-weight: 400; line-height: 1.2; margin-bottom: 0.35rem; }
+        .bench-id .role-line { font-size: 0.74rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); line-height: 1.5; }
+        .bench-bio p { font-size: 0.88rem; color: var(--ink-2); line-height: 1.8; max-width: 620px; }
+
+
+        /* CONTACT (matches index) */
+        .contact { padding: 5rem 0 6rem; }
+        .contact h2 { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 1rem; }
+        .contact-sub { font-size: 0.9rem; color: var(--ink-2); max-width: 460px; margin-bottom: 2rem; line-height: 1.75; }
+        .contact-email { font-family: var(--display); font-size: clamp(1rem, 2vw, 1.5rem); color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 0.15rem; transition: border-color 0.2s; }
+        .contact-email:hover { border-bottom-color: var(--ink); }
+        .contact-loc { margin-top: 1.5rem; font-size: 0.78rem; color: var(--ink-3); }
+        .socials { margin-top: 2rem; display: flex; gap: 1.75rem; flex-wrap: wrap; }
+        .socials a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-3); transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+        .socials a:hover { color: var(--ink); }
+        .socials svg { width: 16px; height: 16px; fill: currentColor; }
 
         /* FOOTER */
         footer { border-top: 1px solid var(--rule); padding: 2rem var(--pad); display: flex; justify-content: space-between; align-items: center; max-width: var(--max); margin: 0 auto; font-size: 0.72rem; color: var(--ink-3); }
@@ -138,6 +124,7 @@
         /* REVEAL */
         .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
         /* MOBILE */
         @media (max-width: 800px) {
@@ -150,8 +137,15 @@
             .nav-links.open { display: flex; }
             .nav-toggle { display: block; z-index: 100; }
             .nav-links a { font-size: 1rem; letter-spacing: 0.05em; }
-            .job-section { grid-template-columns: 1fr; gap: 0.75rem; }
-            .job-section h2 { font-size: 1rem; }
+
+            .person { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 0; }
+            .person .photo { width: 200px; height: 250px; }
+
+            .bench-row { grid-template-columns: 64px 1fr; gap: 1.25rem; padding: 1.75rem 0; }
+            .bench-photo { width: 64px; height: 64px; }
+            .bench-id { grid-column: 2; }
+            .bench-bio { grid-column: 1 / -1; margin-top: 0.5rem; }
+
             footer { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
     </style>
@@ -168,10 +162,10 @@
         </button>
         <ul class="nav-links" id="navLinks">
             <li><a href="/#sectors">Sectors</a></li>
-            <li><a href="/#services">Services</a></li>
+            <li><a href="/#services">Capabilities</a></li>
             <li><a href="/#approach">Approach</a></li>
             <li><a href="/#contact">Contact</a></li>
-            <li><a href="/careers" class="active">Careers</a></li>
+            <li><a href="/careers" class="active">People</a></li>
         </ul>
     </div>
 </nav>
@@ -181,99 +175,211 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
         Friedland Enterprises
     </a>
-    <div class="tag">Now Hiring</div>
-    <h1>Executive Assistant<br>/ Chief of Staff</h1>
-    <div class="job-meta">
-        <span>Miami Beach, FL</span>
-        <span>Part-Time to Full-Time</span>
-        <span>1099 Contractor</span>
-        <span>Remote-Friendly</span>
-    </div>
+    <div class="tag">People</div>
+    <h1>The people behind the work.</h1>
+    <p class="lede">Friedland Enterprises is intentionally small. A principal, an integrator, a chief of staff, and a bench of senior operators we engage by name when an engagement requires their specific expertise. Every person on this page has built, scaled, or led operating businesses in the sectors we serve.</p>
 </div>
 
-<hr class="divider">
+<div class="w">
 
-<div class="job-body w">
+    <div class="section-intro reveal">
+        <div class="tag">The Team</div>
+        <h2 class="section-h2">Day-to-day.</h2>
+    </div>
 
-    <div class="job-section reveal">
-        <h2>What This Actually Is</h2>
-        <div class="job-section-content">
-            <p>This is not a conventional EA role, and if that's what you're looking for, this isn't it.</p>
-            <p>The principal runs a profitable e-commerce startup, holds several board seats across the U.S. and internationally, and manages an active investment portfolio, all while being a present parent and homeowner mid-renovation. But the primary home for this role is Friedland Enterprises, a consulting and board seat holding company through which the principal advises founders, engages with clients, and coordinates across a network of attorneys, accountants, financial advisors, and other professional relationships. The connective tissue holding all of that together is currently held by AI systems, a shared family office, and willpower. You are the human layer that makes all of it actually work.</p>
-            <p>Most of this role can be done remotely. Some of it — managing contractors, overseeing household operations, handling physical logistics — requires being nearby in Miami Beach. If you only want one or the other, this is not the right fit.</p>
-            <p>What makes this different is the AI component. The principal runs heavily automated systems for email triage, research, board preparation, financial reconciliation, and more. Your job is not to do those things manually. It is to operate those systems, keep them running, improve them over time, and step in with judgment when automation hits its limits. The person who thrives here sees that as exciting, not threatening.</p>
-            <p>You will also be embedded in real business decisions, board-level dynamics, investment research, and international operations including active relationships in Brazil. If you are ambitious and intellectually curious, the exposure here is hard to replicate anywhere else.</p>
-            <p>This starts part-time with a clear path to full-time for the right person.</p>
+    <!-- CHRISTIAN -->
+    <div class="person reveal">
+        <div class="photo">
+            <img src="/images/christian.jpg" alt="Christian Friedland" onerror="this.style.display='none'">
+            <div class="placeholder">Christian Friedland<br>headshot</div>
+        </div>
+        <div>
+            <h2>Christian Friedland</h2>
+            <div class="role">Principal</div>
+            <div class="bio">
+                <p>Founder of Build.com, sold to Ferguson Enterprises. Wrote the company's original ERP, CRM, and shopping cart in 1998, among the first SaaS commerce stacks in the home-improvement category, and led the technology and operating organization for two decades.</p>
+                <p>Full-stack technologist and operator. Builds the systems he invests behind. Director on the boards of Hydrobuilder, Eurofase, Applause, MadeiraMadeira. Activist public-equity investor.</p>
+            </div>
         </div>
     </div>
 
-    <div class="job-section reveal">
-        <h2>What You'll Own</h2>
-        <div class="job-section-content">
-            <p>On the household side, you will manage an active home renovation project in Miami Beach, coordinating contractors, tracking timelines, attending walkthroughs, and catching problems before they escalate. You will own recurring home services including cleaning, pressure washing, landscaping, pool, and HVAC — managing vendor relationships and holding people accountable to a standard the principal does not have to think about. Day-to-day logistics like grocery runs, pharmacy, dry cleaning, and errands are part of it. Property matters beyond Miami Beach are handled through a shared family office, and you will coordinate with that team rather than manage them directly.</p>
-            <p>On the executive and business side, the principal uses AI to handle the bulk of email triage, board prep, research, and travel planning. Your role is to operate those systems reliably, step in when the principal is unavailable, and continue training and improving the AI workflows over time. A meaningful part of this role involves Friedland Enterprises client and advisor coordination: scheduling and managing touchpoints with consulting clients, tracking the status of active engagements, liaising with attorneys, accountants, and financial advisors, and making sure nothing falls through the cracks across a complex web of professional relationships. You need to be comfortable operating in a consulting context, which means understanding confidentiality, managing multiple parallel workstreams, and communicating professionally with sophisticated counterparties. Calendar management, coordinating across U.S., Brazilian, and Canadian time zones, is a meaningful part of this. Brazil-related investment and governance matters will come through this role, making Portuguese fluency a real advantage.</p>
-            <p>On the financial side, reconciliation is handled by AI. Your job is anomaly flagging, identifying charges that do not look right, subscriptions that have drifted, or vendor invoices that do not match expectations, and using AI tools to systematize that process over time. You will coordinate with the wealth advisor and accountants on time-sensitive items and own the calendar of when contracts and renewals need attention.</p>
+    <!-- RYAN -->
+    <div class="person reveal">
+        <div class="photo">
+            <img src="/images/ryan-brewer.jpg" alt="Ryan Brewer" onerror="this.style.display='none'">
+            <div class="placeholder">Ryan Brewer<br>headshot</div>
+        </div>
+        <div>
+            <h2>Ryan Brewer</h2>
+            <div class="role">Integrator and AI Enablement Lead</div>
+            <div class="bio">
+                <p>Fifteen years operating in e-commerce and building-products distribution, with prior roles at Build.com, MarketFleet, and PACE Supply Corp. Partner and Integrator at ZenSupply. Designs and deploys the AI and context-engineering layer the firm installs inside operating businesses, structured to be owned by client teams at handoff.</p>
+            </div>
         </div>
     </div>
 
-    <div class="job-section reveal">
-        <h2>What You Need</h2>
-        <div class="job-section-content">
-            <p>You need to be located within 20–30 minutes of Miami Beach. Most work is remote, but physical availability on short notice is a real requirement. Genuine AI fluency is non-negotiable. You use Claude, ChatGPT, or equivalent tools in your actual workflow today — not occasionally and not experimentally. Judgment is the most important thing: you make the call on most things without escalating and you know which ones to bring forward. You will know a great deal about this person's life and business, and discretion is a hard requirement, not a preference. A driver's license, reliable transportation, and a genuinely low-drama operating style are baseline.</p>
-            <p>Experience managing a home renovation or construction project is a strong plus. A background supporting a founder, investor, or family office principal is valuable. Familiarity with venture capital, board governance, or investment operations is useful. Spanish fluency is valued. Portuguese fluency is particularly valuable given active relationships in Brazil. Prior exposure to e-commerce, supply chain, or technology companies provides helpful context.</p>
-            <p>This is not the right fit for someone who needs structure handed to them, wants predictable uniform hours, or sees AI as a gimmick. The workload is uneven. Some periods are intense and some are quiet, and operating well in both is important.</p>
+    <!-- JULIA -->
+    <div class="person reveal">
+        <div class="photo">
+            <img src="/images/julia-rodrigues.jpg" alt="Julia Rodrigues" onerror="this.style.display='none'">
+            <div class="placeholder">Julia Rodrigues<br>headshot</div>
         </div>
-    </div>
-
-    <div class="job-section reveal">
-        <h2>Who We're Looking For</h2>
-        <div class="job-section-content">
-            <p>There is no single archetype here, but a few profiles come to mind.</p>
-            <p>Someone who spent years in operations, project management, or a chief of staff role, stepped back to raise a family, and is now ready to re-engage part-time with something genuinely interesting. That person already knows how to run complex logistics, manage people, and prioritize under pressure. They just need a principal worth doing it for and a schedule that works.</p>
-            <p>Someone early in their career who is extraordinarily organized, self-directed, and hungry to learn by proximity. Not someone who wants to watch from a distance, but someone who wants to be in the room where decisions happen and is willing to earn that by executing flawlessly on the details first.</p>
-            <p>Someone who has run their own household, business, or team at a high level and understands intuitively what it means to serve a principal's goals as if they were their own. The title does not matter to them. What matters is that things work.</p>
-            <p>The common thread across all of them is a genuine desire to serve and to automate. Not to be served. Not to delegate upward. To make the person they support measurably more effective, and to build systems that do that at scale.</p>
-        </div>
-    </div>
-
-    <div class="job-section reveal">
-        <h2>The Opportunity</h2>
-        <div class="job-section-content">
-            <p>The right person grows into a true partner here, not an assistant. You will be close to real decisions, real deals, and real relationships across business, investing, and board work in the U.S. and internationally. That access is available to someone who earns it by executing relentlessly on the basics first.</p>
-            <p>This starts at 20–25 hours a week. The path to full-time is performance, not time served.</p>
-        </div>
-    </div>
-
-    <div class="job-section reveal">
-        <h2>Compensation</h2>
-        <div class="job-section-content">
-            <p>Pay is commensurate with experience. This is a 1099 independent contractor engagement to start.</p>
+        <div>
+            <h2>Julia Rodrigues</h2>
+            <div class="role">Chief of Staff</div>
+            <div class="bio">
+                <p>Directs the firm's operating cadence: engagement coordination, financial administration, board and travel logistics, and the principal interface across clients, portfolio companies, advisors, and counsel.</p>
+            </div>
         </div>
     </div>
 
 </div>
 
-<div class="apply-block reveal">
-    <div class="apply-inner">
-        <div class="tag">How to Apply</div>
-        <h2>Ready to make the case?</h2>
-        <p>Write two paragraphs about who you are and why this specific role appeals to you — not a generic pitch. Include one example of a complex problem you solved autonomously for a busy person. Describe specifically how you use AI tools in your current work, since vague answers are disqualifying. Include your availability and timeline to start.</p>
-        <ul class="apply-instructions">
-            <li>Two paragraphs: who you are, why this role specifically</li>
-            <li>One example of a complex problem you solved autonomously</li>
-            <li>How you use AI tools in your actual workflow today</li>
-            <li>Your availability and timeline to start</li>
-            <li>A 5-minute Loom video — why this is a great fit for both of us. Honest and specific, not polished.</li>
-            <li>A link to your 16Personalities results (free at 16personalities.com — no wrong answer, but tests whether you follow instructions)</li>
-            <li>No cover letters. No recruiters.</li>
-            <li>Referrals from trusted contacts move to the top.</li>
-        </ul>
-        <div class="apply-cta">
-            <a href="mailto:chris@chrisfriedland.com?subject=EA%20%2F%20COS%20%2F%20Your%20Name" class="apply-email">chris@chrisfriedland.com</a>
+<!-- THE BENCH -->
+<section class="bench-wrap reveal">
+    <div class="bench-inner">
+        <div class="bench-intro">
+            <div class="tag">The Bench</div>
+            <h2 class="section-h2">Senior operators, engaged by name.</h2>
+            <p class="sub" style="margin-top: 0.5rem;">Brought into engagements where their specific expertise drives the outcome.</p>
         </div>
-        <p class="subject-line">Subject line: <code>EA / COS / [Your Name]</code></p>
+
+        <div class="bench-list">
+
+            <!-- GREG -->
+            <div class="bench-row">
+                <div class="bench-photo">
+                    <img src="/images/greg-gluchowski.jpg" alt="Greg Gluchowski" onerror="this.style.display='none'">
+                    <div class="initials">GG</div>
+                </div>
+                <div class="bench-id">
+                    <div class="name">Greg Gluchowski</div>
+                    <div class="role-line">Strategy, Governance, &amp; Retail-Channel Distribution</div>
+                </div>
+                <div class="bench-bio">
+                    <p>Thirty-five-year operator in global hardware, security, and consumer manufacturing. Prior principal roles include President of Spectrum Brands' $1.2B Hardware and Home Improvement division (Kwikset, Baldwin, Weiser, Pfister, Stanley, National), President and Chief Executive Officer of The Hillman Group, and President and Chief Executive Officer of Hampton Products International through its 2025 strategic transaction. Independent director at American Outdoor Brands (NASDAQ: AOUT), UniKey Technologies, and Safety Products Global. Advises on enterprise strategy and on entry, expansion, and execution across major retail channels including The Home Depot, Lowe's, Walmart, Ace Hardware, and Tractor Supply.</p>
+                </div>
+            </div>
+
+            <!-- RUSSELL -->
+            <div class="bench-row">
+                <div class="bench-photo">
+                    <img src="/images/russell-lobban.jpg" alt="Russell Lobban" onerror="this.style.display='none'">
+                    <div class="initials">RL</div>
+                </div>
+                <div class="bench-id">
+                    <div class="name">Russell Lobban</div>
+                    <div class="role-line">Data, Analytics, &amp; Marketing Operations</div>
+                </div>
+                <div class="bench-bio">
+                    <p>Career across Auctiva, Build.com, and MarketFleet, currently Partner on the ZenSupply leadership team. Leads data, attribution, and marketing-operations workstreams on engagements and partners with the integrator on AI deployments.</p>
+                </div>
+            </div>
+
+            <!-- BRANDON -->
+            <div class="bench-row">
+                <div class="bench-photo">
+                    <img src="/images/brandon-proctor.jpg" alt="Brandon Proctor" onerror="this.style.display='none'">
+                    <div class="initials">BP</div>
+                </div>
+                <div class="bench-id">
+                    <div class="name">Brandon Proctor</div>
+                    <div class="role-line">Digital Marketing</div>
+                </div>
+                <div class="bench-bio">
+                    <p>Career Chief Marketing Officer across Build.com (where he led the marketing organization through its growth from $70M to over $500M in online revenue), Gaia Design, MadeiraMadeira, and Renuity, and former Chief Executive Officer of Ice.com. Advises on performance media, brand, lifecycle and CRM, attribution, conversion-rate optimization, and martech-stack architecture, with a particular focus on customer acquisition economics and full-funnel growth.</p>
+                </div>
+            </div>
+
+            <!-- VANESSA -->
+            <div class="bench-row">
+                <div class="bench-photo">
+                    <img src="/images/vanessa-pereira.jpg" alt="Vanessa Pereira" onerror="this.style.display='none'">
+                    <div class="initials">VP</div>
+                </div>
+                <div class="bench-id">
+                    <div class="name">Vanessa Pereira</div>
+                    <div class="role-line">Revenue, Sales, &amp; Customer-Success Infrastructure</div>
+                </div>
+                <div class="bench-bio">
+                    <p>Founder of VP Consulting, with sixteen years inside the software industry, most recently as Vice President of Account Management, Government and Enterprise at Authentic8. Designs and implements outbound, pipeline, CRM, account-health, and sales-development systems for software-sector clients.</p>
+                </div>
+            </div>
+
+            <!-- RICK -->
+            <div class="bench-row">
+                <div class="bench-photo">
+                    <img src="/images/rick-watson.jpg" alt="Rick Watson" onerror="this.style.display='none'">
+                    <div class="initials">RW</div>
+                </div>
+                <div class="bench-id">
+                    <div class="name">Rick Watson</div>
+                    <div class="role-line">Retail &amp; Commerce Industry Strategy</div>
+                </div>
+                <div class="bench-bio">
+                    <p>Founder of RMW Commerce Consulting and host of the Watson Weekly newsletter and podcast, the independent commerce-strategy read followed by 68,000+ executives at Walmart, Skims, Crocs, and across the retail sector. Engaged for category framing, competitive structure, and external market perspective.</p>
+                </div>
+            </div>
+
+            <!-- DAVID -->
+            <div class="bench-row">
+                <div class="bench-photo">
+                    <img src="/images/david-berman.jpg" alt="David Berman" onerror="this.style.display='none'">
+                    <div class="initials">DB</div>
+                </div>
+                <div class="bench-id">
+                    <div class="name">David Berman</div>
+                    <div class="role-line">Sourcing &amp; Vendor Strategy in Building Materials</div>
+                </div>
+                <div class="bench-bio">
+                    <p>Founder of Decorative Product Source (Faucet.com, LightingShowplace.com), which he built to approximately $50M prior to co-founding Build.com and its sale to Ferguson Enterprises. Forty years in building-products commerce, credited with developing the industry's IMAP pricing standard. Leads vendor-strategy and sourcing-economics workstreams on advisory engagements.</p>
+                </div>
+            </div>
+
+            <!-- RUSS -->
+            <div class="bench-row">
+                <div class="bench-photo">
+                    <img src="/images/russ-wheeler.jpg" alt="Russ Wheeler" onerror="this.style.display='none'">
+                    <div class="initials">RW</div>
+                </div>
+                <div class="bench-id">
+                    <div class="name">Russ Wheeler</div>
+                    <div class="role-line">Distribution &amp; Category Strategy in E-Commerce and Building Materials</div>
+                </div>
+                <div class="bench-bio">
+                    <p>Chief Executive Officer of BBQGuys, a Brand Velocity Partners portfolio company with approximately 400 employees, 30,000 SKUs, and an owned-brand portfolio that includes Blaze, Pacific Coast Manufacturing, and Mont Alpi. Previously scaled Build.com from $250M to over $1B as President, held a President-level role at Hansgrohe Group, and led digital commerce at Ferguson Enterprises. Brings distribution architecture and category-strategy depth to advisory engagements.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
+</section>
+
+<!-- CONTACT (matches home page) -->
+<section id="contact" class="contact w reveal">
+    <h2>Start a conversation.</h2>
+    <p class="contact-sub">Board opportunities, co-investment, advisor engagements, or sector-specific diligence. We respond to inquiries that are specific about what you're looking for.</p>
+    <a href="mailto:hello@friedlandenterprises.com" class="contact-email">hello@friedlandenterprises.com</a>
+    <p class="contact-loc">Miami Beach, Florida</p>
+    <div class="socials">
+        <a href="https://www.linkedin.com/in/chrisfriedland" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+        </a>
+        <a href="https://x.com/chrisfriedland" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X
+        </a>
+        <a href="https://www.instagram.com/christianfriedland/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            Instagram
+        </a>
+        <a href="https://substack.com/@christianfriedland" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+            Substack
+        </a>
+    </div>
+</section>
 
 <footer>
     <span>&copy; 2026 Friedland Enterprises LLC</span>
@@ -296,6 +402,17 @@
             links.classList.remove('open');
             toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
         });
+    });
+
+    // Show fallback (initials or placeholder) only if image fails to load.
+    // Defaults are hidden via CSS so cached / instant-load images never flash text over the face.
+    function markNoImage(img) {
+        img.style.display = 'none';
+        if (img.parentElement) img.parentElement.classList.add('no-image');
+    }
+    document.querySelectorAll('.bench-photo img, .person .photo img').forEach(img => {
+        img.addEventListener('error', () => markNoImage(img));
+        if (img.complete && img.naturalWidth === 0) markNoImage(img);
     });
 
     // Scroll reveal
