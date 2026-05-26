@@ -123,7 +123,7 @@
         .divider { border: none; border-top: 1px solid var(--rule); max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
         /* NAV */
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: rgba(250,250,248,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: rgba(250,250,248,0.96); border-bottom: 1px solid var(--rule); }
         .nav-inner { max-width: var(--max); margin: 0 auto; padding: 1rem var(--pad); display: flex; justify-content: space-between; align-items: center; }
         .nav-brand { display: flex; align-items: center; text-decoration: none; }
         .nav-logo { height: 40px; width: auto; display: block; }
@@ -215,8 +215,9 @@
             .nav-toggle { display: block; z-index: 100; }
             .nav-links a { font-size: 1.15rem; letter-spacing: 0.05em; padding: 0.5rem 0; }
             body.nav-open { overflow: hidden; position: fixed; width: 100%; }
-            /* When menu is open, strip the nav's backdrop-filter so position: fixed children can escape the nav's containing block and properly overlay the viewport */
-            body.nav-open nav { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: #fafaf8 !important; }
+            /* When menu is open: kill everything outside the nav so nothing can render underneath */
+            body.nav-open > *:not(nav) { visibility: hidden !important; }
+            body.nav-open nav { background: #fafaf8 !important; }
 
             .hero { padding: 6.5rem 0 3.5rem; }
             .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
