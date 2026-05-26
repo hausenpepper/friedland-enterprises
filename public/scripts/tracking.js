@@ -5,9 +5,22 @@
  *
  * Current trackers:
  *   - Pipedrive Web Visitors (Leadfeeder) — site visitor identification.
+ *   - Google Analytics 4 (G-CT6F2LKSMZ) — site analytics.
  *
  * Add or replace trackers here. Do not duplicate snippets into individual pages.
  */
+
+// Google Analytics 4 (gtag.js)
+(function () {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CT6F2LKSMZ';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', 'G-CT6F2LKSMZ');
+})();
 
 // Pipedrive Web Visitors (Leadfeeder)
 (function (ss, ex) {
