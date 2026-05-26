@@ -52,7 +52,7 @@
         .divider { border: none; border-top: 1px solid var(--rule); max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
         /* NAV */
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250,250,248,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: rgba(250,250,248,0.96); border-bottom: 1px solid var(--rule); }
         .nav-inner { max-width: var(--max); margin: 0 auto; padding: 1rem var(--pad); display: flex; justify-content: space-between; align-items: center; }
         .nav-brand { display: flex; align-items: center; text-decoration: none; }
         .nav-logo { height: 40px; width: auto; display: block; }
@@ -128,10 +128,18 @@
 
         /* MOBILE */
         @media (max-width: 800px) {
+            :root { --pad: 2.5rem; }
+            html, body { overflow-x: hidden; }
+            .w, .nav-inner, .bench-inner, footer { padding-left: 2.5rem !important; padding-right: 2.5rem !important; box-sizing: border-box !important; max-width: 100vw !important; }
+            section { box-sizing: border-box; max-width: 100%; }
+            img { max-width: 100%; height: auto; }
+            body.nav-open { overflow: hidden; position: fixed; width: 100%; }
+            body.nav-open > *:not(nav) { visibility: hidden !important; }
+            body.nav-open nav { background: #fafaf8 !important; }
             .nav-links {
                 display: none; flex-direction: column;
                 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-                background: var(--bg); padding: 5rem var(--pad) 2rem;
+                background: #fafaf8; padding: 5rem 2.5rem 2rem;
                 gap: 1.5rem; z-index: 99;
             }
             .nav-links.open { display: flex; }
@@ -408,6 +416,7 @@
     toggle.addEventListener('click', () => {
         links.classList.toggle('open');
         const isOpen = links.classList.contains('open');
+        document.body.classList.toggle('nav-open', isOpen);
         toggle.innerHTML = isOpen
             ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
             : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
@@ -415,6 +424,7 @@
     links.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             links.classList.remove('open');
+            document.body.classList.remove('nav-open');
             toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
         });
     });
