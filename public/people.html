@@ -113,6 +113,20 @@
         .contact-email { font-family: var(--display); font-size: clamp(1rem, 2vw, 1.5rem); color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 0.15rem; transition: border-color 0.2s; }
         .contact-email:hover { border-bottom-color: var(--ink); }
         .contact-loc { margin-top: 1.5rem; font-size: 0.78rem; color: var(--ink-3); }
+        .lead-form { max-width: 460px; margin: 0 0 2.5rem; display: grid; gap: 1.25rem; }
+        .lead-form .field { display: grid; gap: 0.4rem; }
+        .lead-form label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); }
+        .lead-form input, .lead-form textarea { font-family: var(--body); font-size: 0.95rem; font-weight: 300; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 2px; padding: 0.7rem 0.8rem; width: 100%; transition: border-color 0.2s; }
+        .lead-form input:focus, .lead-form textarea:focus { outline: none; border-color: var(--gold); }
+        .lead-form textarea { resize: vertical; min-height: 110px; }
+        .lf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+        .lf-submit { justify-self: start; font-family: var(--body); font-size: 0.85rem; letter-spacing: 0.04em; color: var(--bg); background: var(--ink); border: none; border-radius: 2px; padding: 0.75rem 1.6rem; cursor: pointer; transition: background 0.2s; }
+        .lf-submit:hover { background: var(--accent); }
+        .lf-submit:disabled { opacity: 0.5; cursor: default; }
+        .lf-status { font-size: 0.82rem; color: var(--ink-2); min-height: 1.2em; }
+        .lf-status.error { color: var(--red); }
+        .lf-status.ok { color: var(--green); }
+        .contact-or { font-size: 0.78rem; color: var(--ink-3); margin-bottom: 0.5rem; }
         .socials { margin-top: 2rem; display: flex; gap: 1.75rem; flex-wrap: wrap; }
         .socials a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-3); transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
         .socials a:hover { color: var(--ink); }
@@ -397,6 +411,24 @@
 <section id="contact" class="contact w reveal">
     <h2>Start a conversation.</h2>
     <p class="contact-sub">Board opportunities, co-investment, advisor engagements, or sector-specific diligence. We respond to inquiries that are specific about what you're looking for.</p>
+    <form id="leadForm" class="lead-form" novalidate>
+        <div class="field">
+            <label for="lf-name">Name</label>
+            <input type="text" id="lf-name" name="name" autocomplete="name" maxlength="120" required>
+        </div>
+        <div class="field">
+            <label for="lf-email">Email</label>
+            <input type="email" id="lf-email" name="email" autocomplete="email" maxlength="160" required>
+        </div>
+        <div class="field">
+            <label for="lf-message">What are you looking for?</label>
+            <textarea id="lf-message" name="message" rows="4" maxlength="4000" required></textarea>
+        </div>
+        <input type="text" name="company_website" class="lf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="lf-submit">Send inquiry</button>
+        <p class="lf-status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="contact-or">Or reach us directly</p>
     <a href="mailto:hello@friedlandenterprises.com" class="contact-email">hello@friedlandenterprises.com</a>
     <p class="contact-loc">Miami Beach, Florida</p>
     <div class="socials">
@@ -460,6 +492,48 @@
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Lead form: posts to /api/lead, which creates a Person + Lead in Pipedrive
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const status = leadForm.querySelector('.lf-status');
+            const btn = leadForm.querySelector('.lf-submit');
+            status.className = 'lf-status';
+            const payload = {
+                name: leadForm.name.value.trim(),
+                email: leadForm.email.value.trim(),
+                message: leadForm.message.value.trim(),
+                company_website: leadForm.company_website.value, // honeypot
+            };
+            if (!payload.name || !payload.email || !payload.message) {
+                status.textContent = 'Please add your name, email, and a short note.';
+                status.classList.add('error');
+                return;
+            }
+            btn.disabled = true;
+            const label = btn.textContent;
+            btn.textContent = 'Sending...';
+            try {
+                const res = await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+                if (!res.ok) throw new Error('bad status');
+                leadForm.reset();
+                status.textContent = 'Thank you. We received your note and will be in touch.';
+                status.classList.add('ok');
+            } catch (err) {
+                status.textContent = 'Something went wrong. Please email hello@friedlandenterprises.com directly.';
+                status.classList.add('error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = label;
+            }
+        });
+    }
 </script>
 
 </body>
