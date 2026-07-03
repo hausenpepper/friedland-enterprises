@@ -244,11 +244,11 @@
                 <span class="stat-label">Bull Target</span>
             </div>
             <div class="stat">
-                <span class="stat-val">$47M</span>
+                <span class="stat-val" id="lvlu-mcap">$47M</span>
                 <span class="stat-label">Market Cap</span>
             </div>
             <div class="stat">
-                <span class="stat-val">0.15x</span>
+                <span class="stat-val" id="lvlu-ps">0.15x</span>
                 <span class="stat-label">P/S (vs. 1.5x peer)</span>
             </div>
         </div>
@@ -358,8 +358,13 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // Live stock price — fetches from /api/stock (Cloudflare Pages Function)
-    async function fetchPrice(symbol, priceEl, changeEl, stateEl) {
+    // LVLU derived-stat constants. Update these if shares outstanding or TTM revenue changes materially.
+    // Shares from latest 10-Q. TTM revenue = FY26E base per the May 14, 2026 shareholder analysis.
+    const LVLU_SHARES_M = 2.97;
+    const LVLU_TTM_REV_M = 275;
+
+    // Live stock price. Fetches from /api/stock (Cloudflare Pages Function).
+    async function fetchPrice(symbol, priceEl, changeEl, stateEl, mcapEl, psEl) {
         try {
             const res = await fetch(`/api/stock?symbol=${symbol}`);
             if (!res.ok) throw new Error('fetch failed');
@@ -383,8 +388,16 @@
             stateEl.textContent = stateLabel;
             stateEl.className = `market-state${d.marketState === 'REGULAR' ? ' open' : ''}`;
 
+            // Derived stats. Only computed for LVLU where we have the input constants.
+            if (symbol === 'LVLU' && mcapEl && psEl) {
+                const mcap = d.price * LVLU_SHARES_M;
+                const ps = mcap / LVLU_TTM_REV_M;
+                mcapEl.textContent = `$${mcap.toFixed(1)}M`;
+                psEl.textContent = `${ps.toFixed(2)}x`;
+            }
+
         } catch (e) {
-            priceEl.innerHTML = '<span class="price-loading">—</span>';
+            priceEl.innerHTML = '<span class="price-loading">.</span>';
             stateEl.textContent = 'Price unavailable';
         }
     }
@@ -393,7 +406,9 @@
         'LVLU',
         document.getElementById('lvlu-price'),
         document.getElementById('lvlu-change'),
-        document.getElementById('lvlu-market-state')
+        document.getElementById('lvlu-market-state'),
+        document.getElementById('lvlu-mcap'),
+        document.getElementById('lvlu-ps')
     );
 
     // Refresh every 60 seconds while page is visible
@@ -402,7 +417,9 @@
             'LVLU',
             document.getElementById('lvlu-price'),
             document.getElementById('lvlu-change'),
-            document.getElementById('lvlu-market-state')
+            document.getElementById('lvlu-market-state'),
+            document.getElementById('lvlu-mcap'),
+            document.getElementById('lvlu-ps')
         );
     });
     setInterval(() => {
@@ -410,7 +427,9 @@
             'LVLU',
             document.getElementById('lvlu-price'),
             document.getElementById('lvlu-change'),
-            document.getElementById('lvlu-market-state')
+            document.getElementById('lvlu-market-state'),
+            document.getElementById('lvlu-mcap'),
+            document.getElementById('lvlu-ps')
         );
     }, 60000);
 </script>
